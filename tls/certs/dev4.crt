@@ -1,0 +1,42 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 7 (0x7)
+        Signature Algorithm: ecdsa-with-SHA256
+        Issuer: C=US, CN=ca
+        Validity
+            Not Before: Feb 15 07:26:37 2024 GMT
+            Not After : Feb 14 07:26:37 2025 GMT
+        Subject: C=US, CN=dev4
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (256 bit)
+                pub:
+                    04:39:49:57:2b:d3:0b:e6:ac:3b:0d:94:02:e9:f3:
+                    65:00:ee:62:53:ba:65:50:04:ff:a2:b5:0f:98:9f:
+                    23:5c:ce:22:56:37:65:5f:e0:5f:90:48:c4:63:09:
+                    43:59:68:a4:22:39:2d:38:38:33:1b:52:51:75:5f:
+                    3a:21:09:50:f3
+                ASN1 OID: prime256v1
+                NIST CURVE: P-256
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                88:34:E0:47:9B:F3:E8:BB:F8:F4:13:5D:A9:17:32:32:32:BD:40:17
+            X509v3 Authority Key Identifier: 
+                9D:62:4D:3F:71:23:76:D7:A2:39:98:EB:96:0A:2E:60:7D:37:F7:01
+    Signature Algorithm: ecdsa-with-SHA256
+    Signature Value:
+        30:45:02:20:3b:24:21:3f:66:79:38:3e:0d:e4:04:4f:d1:d1:
+        24:0c:8a:af:6c:bf:bf:82:f1:66:6f:5b:85:16:22:fa:d1:b9:
+        02:21:00:b6:eb:50:83:04:c7:53:6d:b0:14:20:5e:ee:12:ec:
+        90:3c:66:cb:30:7d:81:92:b6:c4:f3:4b:49:e4:24:3b:e5
+-----BEGIN CERTIFICATE-----
+MIIBZzCCAQ2gAwIBAgIBBzAKBggqhkjOPQQDAjAaMQswCQYDVQQGEwJVUzELMAkG
+A1UEAwwCY2EwHhcNMjQwMjE1MDcyNjM3WhcNMjUwMjE0MDcyNjM3WjAcMQswCQYD
+VQQGEwJVUzENMAsGA1UEAwwEZGV2NDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IA
+BDlJVyvTC+asOw2UAunzZQDuYlO6ZVAE/6K1D5ifI1zOIlY3ZV/gX5BIxGMJQ1lo
+pCI5LTg4MxtSUXVfOiEJUPOjQjBAMB0GA1UdDgQWBBSINOBHm/Pou/j0E12pFzIy
+Mr1AFzAfBgNVHSMEGDAWgBSdYk0/cSN216I5mOuWCi5gfTf3ATAKBggqhkjOPQQD
+AgNIADBFAiA7JCE/Znk4Pg3kBE/R0SQMiq9sv7+C8WZvW4UWIvrRuQIhALbrUIME
+x1NtsBQgXu4S7JA8ZsswfYGStsTzS0nkJDvl
+-----END CERTIFICATE-----

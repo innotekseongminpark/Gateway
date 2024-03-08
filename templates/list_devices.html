@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title>Devices</title>
+  </head>
+  <body>
+    <h1>Devices:</h1>
+    <ul>
+      {% for dev in device_paths %}
+      <li><a href="{{dev[1]}}">{{dev[0]}}</a></li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

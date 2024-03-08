@@ -1,0 +1,108 @@
+<html>
+  <style>
+    table {
+		width: 100%;
+        
+    }
+	td {
+		text-align: center;
+		vertical-align: middle;
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+  </style>
+  <head>
+    <title>View Device</title>
+  </head>
+  <body>
+	<form action="{{ request.url._url }}" method="get">
+	  <label>
+		<div>Select a Date</div>
+		<select name="selected">
+		  {% for sel in selections %}
+		  <option value="{{ sel[0] }}" href="{{ sel[1] }}" {% if value == selected %} selected="selected" {% endif %}>
+			{{ sel[0] }}
+		  </option>
+		  {% endfor %}
+		</select>
+	  </label>
+	  <input type="hidden" name="device" value="{{ device }}" />
+	  <input type="submit">
+	</form>
+    <h1>Date Selected : {{ selected }}</h1>
+	<h1>Time : {{ sel_df['timestamp'].item() }}</h1>
+	<h1>PV</h1>
+	<table>
+      <tr>
+        <th></th>
+        <th>PV 1</th>
+        <th>PV 2</th>
+        <th>PV 3</th>
+        <th>PV 4</th>
+      </tr>
+      <tr>
+        <td><b>Voltage</b></td>
+        <td>{{ sel_df['pv1_vol'].item() }}</td>
+        <td>{{ sel_df['pv2_vol'].item() }}</td>
+        <td>{{ sel_df['pv3_vol'].item() }}</td>
+        <td>{{ sel_df['pv4_vol'].item() }}</td>
+      </tr>
+      <tr>
+        <td><b>Current</b></td>
+        <td>{{ sel_df['pv1_cur'].item() }}</td>
+        <td>{{ sel_df['pv2_cur'].item() }}</td>
+        <td>{{ sel_df['pv3_cur'].item() }}</td>
+        <td>{{ sel_df['pv4_cur'].item() }}</td>
+      </tr>
+      <tr>
+        <td><b>Mode</b></td>
+        <td>{{ sel_df['pv1_mode'].item() }}</td>
+        <td>{{ sel_df['pv2_mode'].item() }}</td>
+        <td>{{ sel_df['pv3_mode'].item() }}</td>
+        <td>{{ sel_df['pv4_mode'].item() }}</td>
+      </tr>
+	</table>
+	<h1>Inverter</h1>
+	<table>
+      <tr>
+        <td><b>Voltage</b></td>
+        <td>{{ sel_df['grid_vol'].item() }}</td>
+        <td><b>Apparent(S)</b></td>
+        <td>{{ sel_df['appr_pow'].item() }}</td>
+      </tr>
+      <tr>
+        <td><b>Current</b></td>
+        <td>{{ sel_df['grid_cur'].item() }}</td>
+        <td><b>Active(W)</b></td>
+        <td>{{ sel_df['real_pow'].item() }}</td>
+      </tr>
+      <tr>
+        <td><b>Freq.</b></td>
+        <td>{{ sel_df['grid_freq'].item() }}</td>
+        <td><b>Reactive(Q)</b></td>
+        <td>{{ sel_df['react_pow'].item() }}</td>
+      </tr>
+      <tr>
+        <td><b>Mode</b></td>
+        <td>{{ sel_df['grid_mode'].item() }}</td>
+        <td><b>PF</b></td>
+        <td>{{ sel_df['pow_factor'].item() }}</td>
+      </tr>
+	</table>
+	<!-- 
+	<p><span>{{sel_df.to_html() | safe}} </span></p>
+	--> 
+	
+	<img src="data:image/png;base64,{{graph_pow|safe}}">
+	<img src="data:image/png;base64,{{graph_pv|safe}}">
+	<img src="data:image/png;base64,{{graph_temp|safe}}">
+	
+	<!-- 
+    <h1>Raw Data</h1>
+	<p><span>{{day_df.to_html() | safe}} </span></p>
+	--> 
+  </body>
+</html>
+
