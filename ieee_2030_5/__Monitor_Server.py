@@ -80,9 +80,9 @@ def data_view_device (request, device, selected):
         print("2")
         day_df.set_index('timestamp', inplace=True)
         print("3")
-        day_df = day_df.resample('30T').mean(numeric_only=True)
+        df = df.resample('30T').mean(numeric_only=True)
         print("4")
-        day_df['device'] = device
+        df['device'] = device
         print("5")
         day_df.update(df)
         print("6")
